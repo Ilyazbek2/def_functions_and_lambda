@@ -1,0 +1,20 @@
+Example 1: Map, Filter, Reduce on numbers
+Author: Ilyazbek T.
+Description:
+Adds 1 to numbers 0-9, keeps odd numbers, and sums them.
+"""
+
+from functools import reduce
+
+numbers = range(10)
+
+# Add 1 to each number
+mapped = map(lambda x: x + 1, numbers)
+
+# Keep only odd numbers
+filtered = filter(lambda x: x % 2 == 1, mapped)
+
+# Sum the remaining numbers
+result = reduce(lambda x, y: x + y, filtered, 0)
+
+print(f"Example 1 result: {result}")  # Output: 25
