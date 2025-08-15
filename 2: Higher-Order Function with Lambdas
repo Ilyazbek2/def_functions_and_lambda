@@ -1,0 +1,14 @@
+"""
+Example 2: Higher-Order Function
+Author: Ilyazbek T.
+Description:
+Demonstrates a function that takes another function as input.
+"""
+
+# Define higher-order function
+high_ord_func = lambda x, func: x + func(x)
+
+# Apply function with different lambdas
+result = high_ord_func(2, lambda x: x * x) + high_ord_func(5, lambda x: x + 3)
+
+print(f"Example 2 result: {result}")  # Output: 19
