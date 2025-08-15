@@ -1,0 +1,27 @@
+"""
+Example 3: Map, Filter, Reduce on Lists
+Author: Ilyazbek T.
+Description:
+- Squares floats and rounds them
+- Filters palindromes of length > 4
+- Finds product of numbers
+"""
+
+from functools import reduce
+
+floats = [4.35, 6.09, 3.25, 9.77, 2.16, 8.88, 4.59, 34.23, 12.12, 4.67, 2.45, 9.32]
+words = ['racecar', 'akinremi', 'deed', 'temidayo', 'omoseun', 'civic', 'TATTARRATTAT', 'malayalam', 'nun']
+numbers = [4, 6, 9, 23, 5]
+
+# Square floats and round
+map_result = list(map(lambda num: round(num**2, 1), floats))
+
+# Filter palindromes with length > 4
+filter_result = list(filter(lambda word: len(word) > 4 and word.lower() == word.lower()[::-1], words))
+
+# Product of numbers
+reduce_result = reduce(lambda x, y: x * y, numbers, 1)
+
+print(f"Example 3 map_result: {map_result}")
+print(f"Example 3 filter_result: {filter_result}")
+print(f"Example 3 reduce_result: {reduce_result}")
